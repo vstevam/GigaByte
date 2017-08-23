@@ -26,7 +26,7 @@ project directory
 
 Go to the URL:
 
-<http://localhost:8080/bookstore-webapp/>
+<http://localhost:8080/gigabyte/>
 
 #### Test Client Running
 
