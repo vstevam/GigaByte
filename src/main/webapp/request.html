@@ -38,7 +38,7 @@
 				</thead>
 				<tbody data-ng-repeat="ingredient in ingredients">
 					<tr>
-						<td><input type="checkbox" ng-model="all.isChecked" value=""></td>
+						<td><input type="checkbox" value=""></td>
 						<td>{{ingredient.description}}</td>
 						<td>{{ingredient.price| currency:'R$ ':2}}</td>
 					</tr>
@@ -50,7 +50,7 @@
 		<!-- /.container -->
 		<hr>
 		<div class="text-align-right">
-			<h2>Total do Pedido: R$ 53,00</h2>
+			<h2>Total do Pedido: R$ 0,00</h2>
 		</div>
 	</div>
 </div>

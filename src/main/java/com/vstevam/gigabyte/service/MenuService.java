@@ -17,7 +17,7 @@ public class MenuService {
 	 * @param snack
 	 * @return The Snack price
 	 */
-	public double snackPrice(Snack snack) {
+	public double snackPrice(int snack) {
 		double snackprice = 0;
 		SnackIngredientsDAO SIDAO = new SnackIngredientsDAO();
 		IngredientDAO IDAO = new IngredientDAO();

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -18,11 +19,12 @@ import com.vstevam.gigabyte.service.MenuService;
 public class SnackIngredientsFacade {
 
 	@GET
+	@Path("{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public double allIngredientsSnack(Snack snack) {
+	public double allIngredientsSnack(@PathParam("id") int id) {
 		MenuService menuService = new MenuService();
 		
-		return menuService.snackPrice(snack);
+		return menuService.snackPrice(id);
 	}
 }
 

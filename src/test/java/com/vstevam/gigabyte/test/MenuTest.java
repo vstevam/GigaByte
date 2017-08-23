@@ -55,7 +55,8 @@ public class MenuTest {
    //Test price some ingredients
    @Test
    public void snackPrice() {
-       assertEquals(0.0, 0.0, menu.snackPrice(xBurguer));
+	   int parse = (int) xBurguer.getId();
+       assertEquals(0.0, 0.0, menu.snackPrice(parse));
    }
    
 
