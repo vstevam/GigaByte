@@ -1,0 +1,56 @@
+<div class="container">
+
+	<div class="starter-template" ng-controller="allController as all">
+		<div ng-controller="MenuController  as menu">
+			<h2>Cardápio</h2>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Nome do Lanche</th>
+						<th>Ingredientes</th>
+						<th>Preço</th>
+					</tr>
+				</thead>
+				<tbody data-ng-repeat="snack in snacks">
+					<tr>
+						<td><input type="checkbox" value=""></td>
+						<td>{{snack.description}}</td>
+						<td>{{snack.ingredient}}</td>
+						<td>R$ 10,00</td>
+					</tr>
+
+
+				</tbody>
+			</table>
+		</div>
+
+		<div ng-controller="ingredientsController  as ingredCtrl">
+			<h2>Monte seu lanche</h2>
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Ingredientes</th>
+						<th>Preço</th>
+					</tr>
+				</thead>
+				<tbody data-ng-repeat="ingredient in ingredients">
+					<tr>
+						<td><input type="checkbox" ng-model="all.isChecked" value=""></td>
+						<td>{{ingredient.description}}</td>
+						<td>{{ingredient.price| currency:'R$ ':2}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<div></div>
+
+		</div>
+		<!-- /.container -->
+		<hr>
+		<div class="text-align-right">
+			<h2>Total do Pedido: R$ 53,00</h2>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+[
+
+    {
+        "description": "Alface",
+        "price": 0.40
+    },
+
+    {
+        "description": "Bacon",
+        "price": 2.00
+    },
+
+    {
+        "description": "Hambúrguer de carne",
+        "price": 3.00
+    },
+
+    {
+        "description": "Ovo",
+        "price": 0.80
+    },
+    {
+        "description": "Queijo",
+        "price": 1.50
+    }
+]

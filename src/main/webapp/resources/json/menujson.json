@@ -1,0 +1,22 @@
+[
+
+    {
+        "description": "X-Bacon",
+        "ingredient": "Bacon, hambúrguer de carne e queijo"
+    },
+
+    {
+        "description": "X-Burger",
+        "ingredient": "Hambúrguer de carne e queijo"
+    },
+
+    {
+        "description": "X-Egg",
+        "ingredient": "Ovo, hambúrguer de carne e queijo"
+    },
+
+    {
+        "description": "X-Egg Bacon",
+        "ingredient": "Ovo, bacon, hambúrguer de carne e queijo"
+    }
+]
