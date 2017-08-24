@@ -12,7 +12,8 @@ public class SnackDAO extends AbstractDAO{
 	EntityManager entityManager = this.getEntityManager();
 	
 	public List<Snack> getAll(){
-		Query query = entityManager.createQuery("SELECT e FROM Snack e");
+		Query query = entityManager.createQuery("FROM Snack", Snack.class);
 		return (List<Snack>) query.getResultList();
 	}
+	
 }

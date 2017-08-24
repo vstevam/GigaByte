@@ -8,7 +8,7 @@
 
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:derby:dbgb;create=true" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:derby:dbgb;" />
 			<property name="javax.persistence.jdbc.user" value="" />
 			<property name="javax.persistence.jdbc.password" value="" />
 			<property name="hibernate.show_sql" value="true" />
@@ -16,8 +16,8 @@
 			<property name="hibernate.connection.charSet" value="UTF-8" />
 <!-- 			<property name="hibernate.hbm2dll.auto" value="update" /> -->
 			
-			<property name="hibernate.hbm2ddl.auto" value="create" />
-			<property name="javax.persistence.schema-generation.database.action" value="create"/>
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="javax.persistence.schema-generation.database.action" value="update"/>
 			<property name="eclipselink.ddl-generation" value="create-tables"/>
 			<property name="javax.persistence.schema-generation.create-database-schemas" value="true"/>
 

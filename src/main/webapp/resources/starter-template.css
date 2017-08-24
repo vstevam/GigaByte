@@ -1,20 +1,25 @@
 body {
-    padding-top: 5rem;
+	padding-top: 2rem;
 }
+
 .starter-template {
-    padding: 3rem 1.5rem;
-    text-align: center;
+	padding: 3rem 1.5rem;
+	text-align: center;
 }
 
-.text-align-right{
-    text-align: right;
+.text-align-right {
+	text-align: right;
 }
 
-.div-full { 
-    background: url(img/bg-snack.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+.div-full {
+	background: url(img/bg-snack.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	min-height: 1900px;
+}
+
+.div-full-none {
+	display: none;
 }

@@ -17,12 +17,12 @@ public class MenuService {
 	 * @param snack
 	 * @return The Snack price
 	 */
-	public double snackPrice(int snack) {
+	public double snackPrice(long snack) {
 		double snackprice = 0;
 		SnackIngredientsDAO SIDAO = new SnackIngredientsDAO();
 		IngredientDAO IDAO = new IngredientDAO();
 
-		List<Integer> si = SIDAO.getAllbySnack(snack);
+		List<Long> si = SIDAO.getAllbySnack(snack);
 		if (si.isEmpty()) {
 			List<Ingredient> ingredients = IDAO.getAllbySnackIngredients(si);
 

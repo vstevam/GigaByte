@@ -1,14 +1,6 @@
 //App
-var app = angular.module("GigaByte", [ 'ngRoute' ]).controller("allController",
-		function($scope) {
-			$scope.clickedRow = function(checked) {
-				if (checked) {
-					// add to the list
-				} else {
-					// remove from list
-				}
-			}
-		});
+var app = angular.module("GigaByte", [ 'ngRoute' ])
+var totalRequest = 0;
 
 // Router
 app.config(function($routeProvider) {
@@ -18,6 +10,28 @@ app.config(function($routeProvider) {
 });
 
 // Controllers and Services
+app.controller("bodyController",function($scope){
+	  $scope.class = "div-full";
+	  $scope.changeClass = function(){
+	    if ($scope.class === "div-full")
+	      $scope.class = "div-full-none";
+	    else
+	      $scope.class = "div-full";
+	  };
+	  
+	  $scope.processData = function(data, cb, qtdIng) {
+			  $scope.my = totalRequest 
+			  console.log($scope.my)
+		}
+	  
+	})
+
+
+.controller('allController', ['$scope', function($scope) {
+
+  $scope.my = totalRequest 
+  console.log($scope.my)
+}])
 
 app.service("menuService", function($http, $q) {
 	var deferred = $q.defer();
@@ -32,6 +46,20 @@ app.service("menuService", function($http, $q) {
 })
 
 .controller("MenuController", function($scope, menuService) {
+	$scope.processDataMenu = function(data, cbMenu, qtdSnack) {
+		var price = data.price * qtdSnack;
+
+		if (cbMenu) {
+			totalRequest = totalRequest + price;
+		} else {
+			totalRequest = totalRequest - price;
+		}
+			}
+	
+	$scope.input = {
+			qtdSnack : 1
+		}
+
 	var promise = menuService.getSnacks();
 	promise.then(function(data) {
 		$scope.snacks = data.data;
@@ -52,6 +80,23 @@ app.service("ingredientsService", function($http, $q) {
 })
 
 .controller("ingredientsController", function($scope, ingredientsService) {
+
+	$scope.processData = function(data, cb, qtdIng) {
+		var price = data.price * qtdIng;
+
+		if (cb) {
+			totalRequest = totalRequest + price;
+		} else {
+			totalRequest = totalRequest - price;
+		}
+		  $scope.my = totalRequest 
+		  console.log($scope.my)
+	}
+
+	$scope.input = {
+		qtdIng : 1
+	}
+
 	var promise = ingredientsService.getIngredients();
 	promise.then(function(data) {
 		$scope.ingredients = data.data;

@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -24,6 +25,12 @@ public class DBSetup {
 	 EntityManager manager = factory.createEntityManager();
 	    EntityTransaction trx = manager.getTransaction();
 	    trx.begin();
+	    
+	    List<Snack> snack = manager.createQuery("FROM Snack", Snack.class).getResultList();
+	    
+	    for (Snack snack2 : snack) {
+			System.out.println("Encontrou: " + snack2.getDescription());
+		}
 
         Ingredient alface = new Ingredient();
         Ingredient bacon = new Ingredient();
@@ -131,7 +138,8 @@ public class DBSetup {
 
         System.out.println("Commit");
         
-        //manager.close();
+        manager.close();
+        factory.close();
 	 
 	}
 }

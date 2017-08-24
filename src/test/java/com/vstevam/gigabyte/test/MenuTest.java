@@ -5,10 +5,12 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.vstevam.gigabyte.dao.SnackDAO;
 import com.vstevam.gigabyte.entities.Ingredient;
 import com.vstevam.gigabyte.entities.Snack;
 import com.vstevam.gigabyte.entities.SnackIngredients;
 import com.vstevam.gigabyte.service.MenuService;
+import com.vstevam.gigabyte.setup.DBSetup;
 
 /**
 *
@@ -26,9 +28,13 @@ public class MenuTest {
    Ingredient queijo;
    Ingredient hamburguer;
    SnackIngredients xBurguerQueijo;
+   DBSetup db = new DBSetup();
 
    @Before
    public void setUp() {
+	   String[] args = null;
+	   db.main(args);
+	   
        menu = new MenuService();
        snack = new Snack();
 	   xBurguer = new Snack();
@@ -55,8 +61,7 @@ public class MenuTest {
    //Test price some ingredients
    @Test
    public void snackPrice() {
-	   int parse = (int) xBurguer.getId();
-       assertEquals(0.0, 0.0, menu.snackPrice(parse));
+       assertEquals(0.0, 0.0, menu.snackPrice(xBurguer.getId()));
    }
    
 

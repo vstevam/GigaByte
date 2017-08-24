@@ -17,8 +17,8 @@ public class IngredientDAO extends AbstractDAO{
 		return (List<Ingredient>) query.getResultList();
 	}
 	
-	public List<Ingredient> getAllbySnackIngredients(List<Integer> si){
-		Query query = entityManager.createQuery("SELECT e FROM Ingredient e where e.id in (:si)");
+	public List<Ingredient> getAllbySnackIngredients(List<Long> si){
+		Query query = entityManager.createQuery("SELECT e FROM Ingredient e where e.id in :si");
 		return (List<Ingredient>) query.setParameter("si", si).getResultList();
 	}
 	

@@ -18,8 +18,8 @@ public class SnackIngredientsDAO extends AbstractDAO{
 	}
 	
 	
-	public List<Integer> getAllbySnack(int snack){
+	public List<Long> getAllbySnack(long snack){
 		Query query = entityManager.createQuery("SELECT e.idIngredient FROM SnackIngredients e WHERE e.idSnack = :snackId");
-		return (List<Integer>) query.setParameter("snackId", snack).getResultList();
+		return (List<Long>) query.setParameter("snackId", snack).getResultList();
 	}
 }
